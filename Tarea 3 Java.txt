@@ -1,0 +1,211 @@
+1.
+import java.util.Scanner;
+
+public class MultiplicationTable {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("1. ¿De qué número quieres la tabla?: ");
+        int numTabla = scanner.nextInt();
+        int contador = 1;
+        while (contador <= 10) {
+            int resultado = numTabla * contador;
+            System.out.println(numTabla + " x " + contador + " = " + resultado);
+            contador++;
+        }
+        scanner.close();
+    }
+}
+
+2.
+import java.util.Scanner;
+
+public class SumNaturales {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("\n2. ¿Hasta qué número quieres sumar?: ");
+        int limite_suma = scanner.nextInt();
+        int suma_total = 0;
+        int contador = 1;
+        while (contador <= limite_suma) {
+            suma_total = suma_total + contador;
+            contador = contador + 1;
+        }
+        System.out.println("La suma de todos es: " + suma_total);
+        scanner.close();
+    }
+}
+
+3.
+import java.util.Scanner;
+
+public class Factorial {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("\n3. Dime un número para el factorial: ");
+        int n_fact = scanner.nextInt();
+
+        if (n_fact < 0) {
+            System.out.println("No existen factoriales de negativos.");
+        } else {
+            int resultado_fact = 1;
+            int contador = 1;
+            while (contador <= n_fact) {
+                resultado_fact = resultado_fact * contador;
+                contador = contador + 1;
+            }
+            System.out.println("El factorial es: " + resultado_fact);
+        }
+        scanner.close();
+    }
+}
+
+4.
+import java.util.Scanner;
+
+public class FibonacciSeries {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("\n4. ¿Cuántos números de Fibonacci quieres?: ");
+        int nFibo = scanner.nextInt();
+        int a = 0;
+        int b = 1;
+        int contador = 0;
+        while (contador < nFibo) {
+            System.out.print(a + " ");
+            int auxiliar = a + b;
+            a = b;
+            b = auxiliar;
+            contador++;
+        }
+        System.out.println(); // Salto de línea
+        scanner.close();
+    }
+}
+
+5.
+import java.util.Scanner;
+
+public class AdivinarColor {
+    public static void main(String[] args) {
+        String secreto = "azul";
+        int intentos = 1;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("\n5. Adivina el color (tienes 10 intentos):");
+        while (intentos <= 10) {
+            System.out.print("Intento " + intentos + ": ");
+            String respuesta = scanner.nextLine().toLowerCase();
+            if (respuesta.equals(secreto)) {
+                System.out.println("¡Felicidades! Adivinaste.");
+                break;
+            } else {
+                System.out.println("Ese no es...");
+                intentos++;
+            }
+        }
+        scanner.close();
+    }
+}
+
+6.
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("\n6. Mostrando números pares:");
+        int contador = 2;
+        while (contador <= 100) {
+            System.out.print(contador + " ");
+            contador += 2;
+        }
+    }
+}
+
+7.
+import java.util.Scanner;
+
+public class SumDigits {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("\n\n7. Escribe un número largo: ");
+        int numDigitos = scanner.nextInt();
+        int sumaD = 0;
+
+        while (numDigitos > 0) {
+            int ultimo = numDigitos % 10;
+            sumaD += ultimo;
+            numDigitos = numDigitos / 10;
+        }
+
+        System.out.println("La suma de sus dígitos es: " + sumaD);
+        scanner.close();
+    }
+}
+
+8.
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("\n8. ¿Qué número quieres revisar si es primo?: ");
+        int n_primo = scanner.nextInt();
+        int divisor = 2;
+        boolean es_primo = true;
+        if (n_primo < 2) {
+            es_primo = false;
+        }
+        while (divisor < n_primo) {
+            if (n_primo % divisor == 0) {
+                es_primo = false;
+            }
+            divisor = divisor + 1;
+        }
+        System.out.println("¿Es primo?: " + es_primo);
+        scanner.close();
+    }
+}
+
+9.
+import java.util.Scanner;
+
+public class TrianguloAsteriscos {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("\n9. ¿De cuántos pisos quieres el triángulo?: ");
+        int pisos = scanner.nextInt();
+        int fila_actual = 1;
+        while (fila_actual <= pisos) {
+            for (int i = 0; i < fila_actual; i++) {
+                System.out.print("*");
+            }
+            System.out.println();
+            fila_actual++;
+        }
+        scanner.close();
+    }
+}
+
+10.
+import java.util.Scanner;
+
+public class PowerCalculation {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("\n10. Dime la base: ");
+        int base = scanner.nextInt();
+
+        System.out.print("Dime el exponente: ");
+        int exponente = scanner.nextInt();
+
+        int potencia_total = 1;
+        int contador = 1;
+
+        while (contador <= exponente) {
+            potencia_total = potencia_total * base;
+            contador = contador + 1;
+        }
+
+        System.out.println("El resultado es: " + potencia_total);
+        scanner.close();
+    }
+}
